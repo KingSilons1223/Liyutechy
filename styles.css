@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', 'cursive';
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Young Serif', serif;
+    background-color: rgb(255,192, 0);
+    
+    }
+header {
+     text-align: center;
+}
+nav{
+    text-align: end;
+    list-style-type: square;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    /* text-emphasis-color: white; */
+}
+nav li{
+    display: inline;
+    margin-right: 20px;
+}
+nav li:hover{
+    background-color: #FFFDD0 ;
+    /* border-radius: 20px; */
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color:  #800020;
+}
+nav a{
+    text-decoration: none;
+    color: black;
+}
+nav a:hover{
+    background-color: #FFFDD0 ;
+    /* border-radius: 20px; */
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+    color:  #800020;
+}
+.dead {
+    color: #800020;
+}
+h2{
+    text-align: center;
+}
+button{
+    /*border-radius: 50px;
+    background-color: beige;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;*/
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px; /* Rounded corners */
+    font-size: 18px; /* Slightly larger text */
+    cursor: pointer; /* Hand icon on hover */
+    transition: transform 0.3s ease; /* Smooth animation for hover effect */
+    background-color: #800020;
+}
+
+button:hover {
+    transform: scale(1.05); /* Slightly increase size on hover */
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+button a{
+    text-decoration: none;
+    color: white;
+    background-color: #800020;
+}
+
+
+
+
