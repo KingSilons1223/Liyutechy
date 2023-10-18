@@ -1,84 +1,187 @@
-*{
+/* Global Styles */
+body {
     margin: 0;
     padding: 0;
     font-family: 'Pacifico', 'cursive';
     font-family: 'Raleway', sans-serif;
-    font-family: 'Young Serif', serif;
+   font-family: 'Young Serif', serif;
     background-color: rgb(255,192, 0);
-    
-    }
-header {
-     text-align: center;
+    transition: background-color 0.5s ease-in-out;
 }
-nav{
-    text-align: end;
-    list-style-type: square;
-    padding: 0;
+
+header {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 2.5em;
+    background-color: rgb(255,192, 0);
+    color: #FFFDD0;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    padding: 8px 16px;
     margin: 0;
     display: flex;
-    justify-content: space-around;
-    /* text-emphasis-color: white; */
-}
-nav li{
-    display: inline;
-    margin-right: 20px;
-}
-nav li:hover{
-    background-color: #FFFDD0 ;
-    /* border-radius: 20px; */
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-    color:  #800020;
-}
-nav a{
-    text-decoration: none;
-    color: black;
-}
-nav a:hover{
-    background-color: #FFFDD0 ;
-    /* border-radius: 20px; */
-    transform: scale(1.1);
-    transition: transform 0.3s ease;
-    color:  #800020;
-}
-.dead {
-    color: #800020;
-}
-h2{
-    text-align: center;
-}
-button{
-    /*border-radius: 50px;
-    background-color: beige;
-    text-align: center;
     justify-content: center;
+    background-color: rgb(255,192, 0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 15px 30px;*/
+    width: 60%;
+}
+
+nav li {
+    list-style-type: none;
+    padding: 5px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav li:hover {
+    background-color: #FFFDD0;
+    color: green;
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.dead {
+    color: green;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
     color: white;
     padding: 15px 30px;
     border: none;
-    border-radius: 20px; /* Rounded corners */
-    font-size: 18px; /* Slightly larger text */
-    cursor: pointer; /* Hand icon on hover */
-    transition: transform 0.3s ease; /* Smooth animation for hover effect */
-    background-color: #800020;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    background-color: green;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    transform: scale(1.05); /* Slightly increase size on hover */
+    transform: scale(1.05);
+    background-color: #66171a;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
-.center{
+
+.center {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 20vh;
 }
-button a{
+
+button a {
     text-decoration: none;
-    color: white;
-    background-color: #800020;
+    color: inherit;
 }
 
+/*... [Previous Styles] ... */
 
+/* Stylish Responsiveness */
+/* Media Query for Tablets */
+@media (max-width: 768px) {
+    header {
+        font-size: 2.2em; /* Slightly reduce the company name size for tablet screens */
+    }
+    
+    nav {
+        position: fixed; /* Fix the nav to the bottom */
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50px;
+        flex-direction: row; /* Align items in a row */
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+        background: #444; /* Make sure the background is solid */
+        z-index: 1000; /* Ensure it's on top */
+        box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Shadow above the bar */
+    }
 
+    nav ul {
+        flex-direction: row; /* Align items in a row */
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    nav li {
+        margin: 0;
+        padding: 10px;
+    }
+
+    /* Let's use icons as an example. You can replace these with actual image paths or font icons */
+    nav li a:before {
+        content: '🏠'; /* Example: Home icon */
+        display: block;
+    }
+
+    nav li:nth-child(2) a:before {
+        content: '📦'; /* Example: Products icon */
+    }
+
+    nav li:nth-child(3) a:before {
+        content: '🛠'; /* Example: Services icon */
+    }
+
+    nav li:nth-child(4) a:before {
+        content: '📞'; /* Example: Contact Us icon */
+    }
+
+    nav a {
+        font-size: 0; /* Hide the text, show only icons */
+    }
+
+    button {
+        padding: 10px 20px; /* Reduce the padding */
+        font-size: 16px; /* Adjust the font-size */
+    }
+
+    h2 {
+        font-size: 1.8em; /* Adjust the heading size */
+    }
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px; /* Adjust base font-size for mobiles */
+    }
+
+    header {
+        font-size: 2em; /* Further reduce the company name size for mobile screens */
+    }
+
+    button {
+        padding: 8px 16px; /* Further reduce padding for mobiles */
+    }
+
+    h2 {
+        font-size: 1.6em; /* Adjust heading size for mobiles */
+    }
+}
+
+/* General transitions for smooth changes */
+* {
+    transition: all 0.3s ease-in-out;
+}
 
