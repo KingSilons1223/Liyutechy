@@ -4,34 +4,39 @@ body {
     padding: 0;
     font-family: 'Raleway', sans-serif;
     background-color: rgb(255,192, 0);
-    transition: background-color 0.5s ease-in-out;
+    transition: background-color 0.5s ease-in-out, gradientChange 5s infinite;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
-/* CSS for Header */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     background: linear-gradient(to right, #009966, #00cc99);
     padding: 20px 0;
     text-align: center;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease-in-out; /* Added */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+header:hover {
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
     color: #808080;
     font-family: 'Young Serif', serif;
     font-size: 2.5rem;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; /* Added */
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
 header h1:hover {
     color: #f2f2f2;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-    animation: pulse 1s infinite;
+    animation: pulse 1s infinite, heartbeat 1.5s infinite;
 }
 
-/* CSS for Navbar */
 nav ul {
     display: flex;
     justify-content: center;
@@ -43,13 +48,17 @@ nav ul li {
     margin: 0 10px;
     cursor: pointer;
     font-weight: 600;
-    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-decoration 0.3s ease-in-out; /* Enhanced transition */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out, text-decoration 0.3s ease-in-out;
 }
 
 nav ul li:hover {
     transform: scale(1.1);
     text-decoration: underline;
     color: red;
+}
+
+nav ul li:active {
+    transform: scale(0.95);
 }
 
 nav ul li:nth-child(odd) {
@@ -63,7 +72,7 @@ nav ul li:nth-child(even) {
 nav ul li a {
     text-decoration: none;
     color: inherit;
-    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out, color 0.3s ease-in-out; /* Enhanced transition */
+    transition: background-color 0.3s ease-in-out, padding 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 nav ul li a:hover {
@@ -72,7 +81,6 @@ nav ul li a:hover {
     padding: 2px 8px;
 }
 
-/* Keyframe Animation for Main Content Entrance */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -87,4 +95,204 @@ nav ul li a:hover {
 main {
     opacity: 0;
     animation: fadeInUp 1s forwards 0.5s;
+    padding: 15px;
+    font-family: 'Raleway', sans-serif;
+}
+
+main .About {
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+main .About:hover {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+h2 {
+    /*background: linear-gradient(to right, #009966, #00cc99);*/
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+h2:hover{
+    box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
+}
+.card-container{
+    display: flex;
+    justify-content: center;    /* Center the cards horizontally */
+    gap: 20px;              /* Space between each card */
+    flex-direction: row;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s forwards 0.5s;
+    padding: 15px;
+}
+.card{
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-out;
+}
+.card-content{
+    padding: 15px;
+}
+.card img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+@keyframes gradientChange {
+    0% {
+        background-color: rgb(255,192, 0);
+    }
+    50% {
+        background-color: rgb(255,220, 0);
+    }
+    100% {
+        background-color: rgb(255,192, 0);
+    }
+}
+/* ... Your previous CSS ... */
+
+/* Responsive design for tablet */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 8px 0;
+    }
+    
+    nav ul li:hover {
+        transform: scale(1.1);
+        text-decoration: underline;
+        color: red;
+    }
+
+    nav ul li:nth-child(odd) {
+        color: white;
+    }
+
+    nav ul li:nth-child(even) {
+        color: black;
+    }
+
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .card:hover {
+        transform: scale(1.05) translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Responsive design for mobile */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+    
+    nav ul li:hover {
+        transform: scale(1.1);
+        text-decoration: underline;
+        color: red;
+    }
+
+    nav ul li:nth-child(odd) {
+        color: white;
+    }
+
+    nav ul li:nth-child(even) {
+        color: black;
+    }
+
+    .card {
+        width: 95%; /* A bit of margin on the sides for better appearance */
+        margin-bottom: 15px;
+    }
+
+    .card:hover {
+        transform: scale(1.03) translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+}
+/* ... Your previous CSS ... */
+
+/* Menu Toggle Styling */
+.menu-toggle {
+    cursor: pointer;
+    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    transition: transform 0.3s ease;
+}
+
+.menu-toggle:hover {
+    transform: rotate(90deg);
+}
+
+/* Mobile and Tablet Navigation */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Adjust according to header height */
+        right: 20px;
+        background-color: rgba(0, 255, 255, 0.9); /* Slight transparency */
+        border-radius: 5px;
+    }
+
+    nav ul li {
+        margin: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }
