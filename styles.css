@@ -2,7 +2,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Bree Serif', serif;
+    /*font-family: 'Playfair Display SC', serif;*/
     background-color: rgb(255,192, 0);
     transition: background-color 0.5s ease-in-out, gradientChange 5s infinite;
     box-sizing: border-box;
@@ -25,9 +26,9 @@ header:hover {
 }
 
 header h1 {
-    color: #808080;
-    font-family: 'Young Serif', serif;
-    font-size: 2.5rem;
+    color: #f2f2f2;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 5.0rem;
     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 
@@ -42,6 +43,7 @@ nav ul {
     justify-content: center;
     list-style-type: none;
     padding-top: 10px;
+    font-size: 1rem;
 }
 
 nav ul li {
@@ -96,8 +98,7 @@ main {
     opacity: 0;
     animation: fadeInUp 1s forwards 0.5s;
     padding: 15px;
-    font-family: 'Raleway', sans-serif;
-}
+    }
 
 main .About {
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
@@ -133,6 +134,15 @@ h2 {
     text-align: center;
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease-in-out;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 3.0rem;
+}
+.jaq{
+    padding: 15px 0;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    font-family: 'Bree Serif', serif;
+    font-size: 1.5rem;
 }
 h2:hover{
     box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2);
@@ -294,5 +304,34 @@ h2:hover{
 
     .menu-toggle {
         display: block;
+    }
+}
+.left, .right {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+}
+
+.left {
+    right: 100%; /* Pushing it out of view on the right */
+    animation: comeFromLeft 1s forwards;
+}
+
+.right {
+    left: 100%; /* Pushing it out of view on the left */
+    animation: comeFromRight 1s forwards;
+}
+
+@keyframes comeFromLeft {
+    to {
+        right: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes comeFromRight {
+    to {
+        left: 0;
+        opacity: 1;
     }
 }
